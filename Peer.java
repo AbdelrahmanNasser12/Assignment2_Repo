@@ -1,9 +1,13 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.Scanner;
 
 public class Peer extends Thread {
@@ -12,14 +16,15 @@ public class Peer extends Thread {
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter Your Port: ");
 
-
         int port=scanner.nextInt();
+
+
 
 
         ServerSocket serverSocket=new ServerSocket(Integer.valueOf(port));
         Accepter accepter=new Accepter(serverSocket);
         accepter.start();
-
+ 
         new Peer().Requester();
         new Peer().Message(accepter);
 
@@ -59,3 +64,7 @@ public class Peer extends Thread {
 }
 
 
+    }
+
+
+}

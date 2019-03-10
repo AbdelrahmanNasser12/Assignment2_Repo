@@ -37,6 +37,7 @@ public class Accepter extends Thread {
             sender.printWriter.println(string);
         }
     }
+
 }
 
 
