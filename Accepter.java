@@ -31,6 +31,13 @@ public class Accepter extends Thread {
         }
     }
 
+
+    public void SendMsg(String string) {
+        for (Sender sender:senders) {
+            sender.printWriter.println(string);
+        }
+    }
+
 }
 
 
