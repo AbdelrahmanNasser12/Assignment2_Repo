@@ -21,8 +21,7 @@ public class Sender extends Thread {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             while (true) { bufferedReader.readLine(); }
         }
-        catch (IOException e) {  }
+        catch (IOException e) { this.accepter.senders.remove(this); }
     }
-
 
 }
